@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://www.IntactileDesign/ontologies/2014/SOntologie.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:p1="http://www.opengis.net/ont/gml#"
+  xml:base="http://www.IntactileDesign/ontologies/2014/SOntologie.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="Bird">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="MovingObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Airplane">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MovingObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Port">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MovingPoint">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Point"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ship">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#MovingObject"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#MovingObject">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Way">
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="pointSpeed">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#MovingPoint"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="type">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#MovingObject"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="description">
+    <rdfs:domain rdf:resource="#MovingObject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="objectName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#MovingObject"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pointAltitude">
+    <rdfs:domain rdf:resource="#MovingPoint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pointId">
+    <rdfs:domain rdf:resource="#MovingPoint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="objectId">
+    <rdfs:domain rdf:resource="#MovingObject"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="pointDirection">
+    <rdfs:domain rdf:resource="#MovingPoint"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

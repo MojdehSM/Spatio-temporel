@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:p2="http://www.IntactileDesign.com/ontologies/2014/TOntologie.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:p1="http://www.IntactileDesign.com/ontologies/2014/SOntologie.owl#"
+    xmlns="http://www.IntactileDesign.com/ontologies/2014/STOntologie#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.IntactileDesign.com/ontologies/2014/STOntologie">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.IntactileDesign.com/ontologies/2014/TOntologie.owl"/>
+    <owl:imports rdf:resource="http://www.IntactileDesign.com/ontologies/2014/SOntologie.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="TimeSlice"/>
+  <owl:ObjectProperty rdf:ID="during">
+    <rdfs:domain rdf:resource="#TimeSlice"/>
+    <rdfs:range rdf:resource="http://www.IntactileDesign.com/ontologies/2014/TOntologie.owl#Interval"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="atTime">
+    <rdfs:range rdf:resource="http://www.IntactileDesign.com/ontologies/2014/TOntologie.owl#Instant"/>
+    <rdfs:domain rdf:resource="#TimeSlice"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isTimeSliceOf">
+    <rdfs:domain rdf:resource="#TimeSlice"/>
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasGeometry">
+    <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+    <rdfs:domain rdf:resource="#TimeSlice"/>
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasFiliation">
+    <rdfs:range rdf:resource="#TimeSlice"/>
+    <rdfs:domain rdf:resource="#TimeSlice"/>
+  </owl:ObjectProperty>
+</rdf:RDF>

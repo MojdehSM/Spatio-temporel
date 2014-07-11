@@ -1,0 +1,28 @@
+
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix par: <http://parliament.semwebcentral.org/parliament#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix units: <http://www.opengis.net/def/uom/OGC/1.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix myST:<http://www.IntactileDESGN.com/ontologies/2014/STOntologie#> .
+@prefix myS:<http://www.IntactileDESGN.com/ontologies/2014/SOntologie#> .
+@prefix myT:<http://www.IntactileDESGN.com/ontologies/2014/TOntologie#> .
+@prefix mySx:<http://www.IntactileDESGN.com/ontologies/2014/Example#> .
+
+
+mySx:Polygon1 a geo:Polygon;
+	geo:asWKT "POLYGON((42.5 9.4, 42.7 9.4, 42.7 9.5, 42.7 9.5, 42.5 9.4))"^^sf:wktLiteral .
+
+mySx:port1 a myS:Port;
+	rdfs:label "Port bastia";
+	geo:hasGeometry mySx:Polygon1 .
+

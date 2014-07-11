@@ -1,0 +1,42 @@
+
+PREFIX afn: <http://jena.hpl.hp.com/ARQ/function#>
+PREFIX fn: <http://www.w3.org/2005/xpath-functions#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX gml: <http://www.opengis.net/ont/gml#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX par: <http://parliament.semwebcentral.org/parliament#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sf: <http://www.opengis.net/ont/sf#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX units: <http://www.opengis.net/def/uom/OGC/1.0/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+PREFIX myST:<http://www.IntactileDESGN.com/ontologies/2014/STOntologie#> 
+PREFIX myS:<http://www.IntactileDESGN.com/ontologies/2014/SOntologie#> 
+PREFIX myT:<http://www.IntactileDESGN.com/ontologies/2014/TOntologie#> 
+PREFIX mySx:<http://www.IntactileDESGN.com/ontologies/2014/Example#> 
+
+SELECT DISTINCT
+?position ?when
+WHERE {
+
+?ship rdfs:label "Alpha" .
+?ship rdf:type myS:Ship .
+?ship myST:isTimeSliceOf ?timeslice .
+
+?timeslice geo:hasGeometry  ?gposition .
+?timeslice myST:atTime  ?tposition .
+?tposition myT:timeValue  ?when .
+
+?gposition geo:asWKT ?position .
+
+
+FILTER ( ?when > "2014-06-28T11:00:00"^^xsd:dateTime) .
+FILTER ( ?when < "2014-06-28T13:30:00"^^xsd:dateTime).
+
+
+
+
+}
