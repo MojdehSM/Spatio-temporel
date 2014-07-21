@@ -20,9 +20,25 @@
 
 
 mySx:Polygon1 a geo:Polygon;
-	geo:asWKT "POLYGON((42.5 9.4, 42.7 9.4, 42.7 9.5, 42.7 9.5, 42.5 9.4))"^^sf:wktLiteral .
+	geo:asWKT "POLYGON((43.7 7.25, 43.67 7.3, 43.7 7.33, 43.71 7.29, 43.7 7.25))"^^sf:wktLiteral .
 
 mySx:port1 a myS:Port;
-	rdfs:label "Port bastia";
+	rdfs:label "Port Nice";
 	geo:hasGeometry mySx:Polygon1 .
+
+
+mySx:Polygon2 a geo:Polygon;
+	geo:asWKT "POLYGON((44.41 8.95, 44.39 8.9, 44.37 8.94, 44.39 8.97, 44.41 8.95))"^^sf:wktLiteral .
+
+mySx:port2 a myS:Port;
+	rdfs:label "Port Genova";
+	geo:hasGeometry mySx:Polygon2 .
+
+
+mySx:Polygon3 a geo:Polygon;
+	geo:asWKT "POLYGON((42.5 9.4, 42.7 9.4, 42.7 9.5, 42.7 9.5, 42.5 9.4))"^^sf:wktLiteral .
+
+mySx:port3 a myS:Port;
+	rdfs:label "Port Bastia";
+	geo:hasGeometry mySx:Polygon3 .
 

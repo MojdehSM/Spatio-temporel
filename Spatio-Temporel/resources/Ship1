@@ -71,11 +71,8 @@ mySx:MovingPoint8 a myS:MovingPoint;
 	myS:pointSpeed  "10"^^xsd:string .
 
 mySx:MovingPoint9 a myS:MovingPoint;
-	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(42.689615 9.469331)"^^sf:WktLiteral;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(42.68962 9.469340)"^^sf:WktLiteral;
 	myS:pointSpeed  "3"^^xsd:string .
-
-
-
 
 
 mySx:timeSlice1 a myST:TimeSlice;
@@ -105,8 +102,6 @@ mySx:timeSlice8 a myST:TimeSlice;
 mySx:timeSlice9 a myST:TimeSlice;
 	myST:atTime mySx:instant9;
 	geo:hasGeometry mySx:MovingPoint9 .
-
-
 
 
 mySx:ship1 a myS:Ship;

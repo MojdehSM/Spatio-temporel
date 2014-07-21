@@ -1,0 +1,117 @@
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix par: <http://parliament.semwebcentral.org/parliament#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix units: <http://www.opengis.net/def/uom/OGC/1.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix myST:<http://www.IntactileDESIGN.com/ontologies/2014/STOntologie#> .
+@prefix myS:<http://www.IntactileDESIGN.com/ontologies/2014/SOntologie#> .
+@prefix myT:<http://www.IntactileDESIGN.com/ontologies/2014/TOntologie#> .
+@prefix mySx:<http://www.IntactileDESIGN.com/ontologies/2014/Example#> .
+
+
+mySx:instant10 a time:Instant;
+	myT:timeValue   "2014-04-22T08:08:18"^^xsd:dateTime .
+mySx:instant11 a time:Instant;
+	myT:timeValue   "2014-04-22T08:41:30"^^xsd:dateTime .
+mySx:instant12 a time:Instant;
+	myT:timeValue   "2014-04-22T09:07:15"^^xsd:dateTime .
+mySx:instant13 a time:Instant;
+	myT:timeValue   "2014-04-22T09:30:50"^^xsd:dateTime .
+mySx:instant14 a time:Instant;
+	myT:timeValue   "2014-04-22T10:25:33"^^xsd:dateTime .
+mySx:instant15 a time:Instant;
+	myT:timeValue   "2014-04-22T12:03:23"^^xsd:dateTime .
+mySx:instant16 a time:Instant;
+	myT:timeValue   "2014-04-22T13:31:24"^^xsd:dateTime .
+mySx:instant17 a time:Instant;
+	myT:timeValue   "2014-04-22T14:07:21"^^xsd:dateTime .
+mySx:instant18 a time:Instant;
+	myT:timeValue   "2014-04-22T14:47:45"^^xsd:dateTime .
+
+
+mySx:MovingPoint10 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(44.379292 8.933404)"^^sf:WktLiteral;
+	myS:pointSpeed  "5"^^xsd:string .
+
+mySx:MovingPoint11 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(44.125510 8.936151)"^^sf:WktLiteral;
+	myS:pointSpeed  "7"^^xsd:string .
+
+mySx:MovingPoint12 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(43.880533 8.911431)"^^sf:WktLiteral;
+	myS:pointSpeed  "10"^^xsd:string .
+
+mySx:MovingPoint13 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(43.556968 8.914178)"^^sf:WktLiteral;
+	myS:pointSpeed  "14"^^xsd:string .
+
+mySx:MovingPoint14 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(43.250665 8.973230)"^^sf:WktLiteral;
+	myS:pointSpeed  "12"^^xsd:string .
+
+mySx:MovingPoint15 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(43.184263 9.158967)"^^sf:WktLiteral;
+	myS:pointSpeed  "9"^^xsd:string .
+
+mySx:MovingPoint16 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(43.084396 9.539025)"^^sf:WktLiteral;
+	myS:pointSpeed  "15"^^xsd:string .
+
+mySx:MovingPoint17 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(42.885484 9.566491)"^^sf:WktLiteral;
+	myS:pointSpeed  "20"^^xsd:string .
+
+mySx:MovingPoint18 a myS:MovingPoint;
+	geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(42.669615 9.409331)"^^sf:WktLiteral;
+	myS:pointSpeed  "3"^^xsd:string .
+
+
+mySx:timeSlice10 a myST:TimeSlice;
+	myST:atTime mySx:instant10;
+	geo:hasGeometry mySx:MovingPoint10 .
+mySx:timeSlice11 a myST:TimeSlice;
+	myST:atTime mySx:instant11;
+	geo:hasGeometry mySx:MovingPoint11 .
+mySx:timeSlice12 a myST:TimeSlice;
+	myST:atTime mySx:instant12;
+	geo:hasGeometry mySx:MovingPoint12 .
+mySx:timeSlice13 a myST:TimeSlice;
+	myST:atTime mySx:instant13;
+	geo:hasGeometry mySx:MovingPoint13 .
+mySx:timeSlice14 a myST:TimeSlice;
+	myST:atTime mySx:instant14;
+	geo:hasGeometry mySx:MovingPoint14 .
+mySx:timeSlice15 a myST:TimeSlice;
+	myST:atTime mySx:instant15;
+	geo:hasGeometry mySx:MovingPoint15 .
+mySx:timeSlice16 a myST:TimeSlice;
+	myST:atTime mySx:instant16;
+	geo:hasGeometry mySx:MovingPoint16 .
+mySx:timeSlice17 a myST:TimeSlice;
+	myST:atTime mySx:instant17;
+	geo:hasGeometry mySx:MovingPoint17 .
+mySx:timeSlice18 a myST:TimeSlice;
+	myST:atTime mySx:instant18;
+	geo:hasGeometry mySx:MovingPoint18 .
+
+
+mySx:ship2 a myS:Ship;
+	rdfs:label "Beta";
+	myST:isTimeSliceOf  mySx:timeSlice10 ;
+	myST:isTimeSliceOf  mySx:timeSlice11 ;
+	myST:isTimeSliceOf  mySx:timeSlice12 ;
+	myST:isTimeSliceOf  mySx:timeSlice13 ;
+	myST:isTimeSliceOf  mySx:timeSlice14 ;
+	myST:isTimeSliceOf  mySx:timeSlice15 ;
+	myST:isTimeSliceOf  mySx:timeSlice16 ;
+	myST:isTimeSliceOf  mySx:timeSlice17 ;
+	myST:isTimeSliceOf  mySx:timeSlice18 .

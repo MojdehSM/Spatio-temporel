@@ -22,7 +22,7 @@ public class MainST {
 	public static void Interogation() {
 		Model model = CreateOntology.model;
 
-		Query query = QueryFactory.create(req);
+		Query query = QueryFactory.create(req2);
 		QueryExecution qexec = QueryExecutionFactory.create(query, model);
 		try {
 			ResultSet results = qexec.execSelect();
@@ -37,7 +37,7 @@ public class MainST {
 				"./resources/TOntologie.owl", "./resources/SOntologie.owl" };
 		CreateOntology.CreateMemOntologyFromFiles(files, "RDF/XML");
 
-		String[] files2 = { "./resources/Ship", "./resources/Port" };
+		String[] files2 = { "./resources/Ship1",  "./resources/Ship2", "./resources/Ports" };
 		CreateOntology.CreateMemOntologyFromFiles(files2, "N3");
 
 	}
@@ -65,15 +65,73 @@ public class MainST {
 	static String req = prefix + " SELECT ?port ?ship ?when ?position WHERE  "
 			+ "{" + "?ship rdfs:label \"Alpha\" ."
 			+ "?ship rdf:type myS:Ship ."
-			+ "?ship myST:isTimeSliceOf ?timeslice ." + ""
+			+ "?ship myST:isTimeSliceOf ?timeslice ." 
+			+ ""
 			+ "?timeslice geo:hasGeometry  ?gposition ."
 			+ "?timeslice myST:atTime  ?tposition ."
 			+ "?tposition myT:timeValue  ?when ."
 			+ "?gposition geo:asWKT ?position ."
-			+ "?gposition myS:pointSpeed ?speed ." + ""
-			+ "?port rdfs:label \"Port bastia\" ."
-			+ "?port rdf:type myS:Port ." + "?port geo:hasGeometry ?geoPort ."
-			+ "?geoPort geo:asWKT ?wktPort ." + ""
-			+ "?position spatial:withinCircle(42.689615 9.469331 10 'km')"
+			+ "?gposition myS:pointSpeed ?speed ." 
+			+ ""
+			+ "?port rdfs:label \"Port Bastia\" ."
+			+ "?port rdf:type myS:Port ." 
+			+ "?port geo:hasGeometry ?geoPort ."
+			+ "?geoPort geo:asWKT ?wktPort ." 
+			+ ""
+			+ "?position spatial:withinCircle(42.5 9.4 10 'km')"
 			+ "}";
+	
+	static String req2 = prefix
+			+ " SELECT ?ship ?position ?when ?speed WHERE  "
+			+ "{"
+			+ "?ship rdfs:label \"Alpha\" ."
+			+ "?ship rdf:type myS:Ship ."
+			+ "?ship myST:isTimeSliceOf ?timeslice ."
+			+ ""
+			+ "?timeslice geo:hasGeometry  ?gposition ."
+			+ "?timeslice myST:atTime  ?tposition ."
+			+ "?tposition myT:timeValue  ?when ."
+			+ "?gposition geo:asWKT ?position ."
+			+ "?gposition myS:pointSpeed ?speed ."
+			+ "}";
+
+	static String req3 = prefix
+			+ " SELECT ?position ?when WHERE  "
+			+ "  { "
+			+ "?ship rdfs:label \"Alpha\" ."
+			+ "?ship rdf:type myS:Ship ."
+			+ "?ship myST:isTimeSliceOf ?timeslice ."
+			+ ""
+			+ "?timeslice geo:hasGeometry  ?gposition ."
+			+ "?timeslice myST:atTime  ?tposition ."
+			+ "?tposition myT:timeValue  ?when ."
+			+ "?gposition geo:asWKT ?position ."
+			+ "?gposition myS:pointSpeed ?speed ."
+			+ ""
+			+ "FILTER ( ?when > \"2014-06-28T11:00:00\"^^xsd:dateTime) ."
+			+ "FILTER ( ?when < \"2014-06-28T13:30:00\"^^xsd:dateTime)."
+			+ "}";
+	
+
+	static String req4 = prefix
+			+ " SELECT ?port ?ship ?when ?position WHERE  "
+			+ "  { "
+			+ "?ship rdfs:label \"Beta\" ."
+			+ "?ship rdf:type myS:Ship ."
+			+ "?ship myST:isTimeSliceOf ?timeslice ."
+			+ ""
+			+ "?timeslice geo:hasGeometry  ?pointST ."
+			+ "?timeslice myST:atTime  ?tST ."
+			+ "?tST  myT:timeValue  ?when ."
+			+ ""
+			+ "?pointST geo:asWKT ?position ."
+			+ "?pointST myS:pointSpeed ?speed."
+			+ ""
+			+ "?port rdfs:label \"Port Genova\" ."
+			+ "?port rdf:type myS:Port ."
+			+ "?port geo:hasGeometry ?geoPort ."
+			+ "?geoPort geo:asWKT ?wktPort ."
+			+ "FILTER (geof:sfWithin(?position,?wktPort))"
+			+ "}";
+
 }
