@@ -1,6 +1,7 @@
 @prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geoS: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geof: <http://www.opengis.net/def/function/geosparql/> .
 @prefix gml: <http://www.opengis.net/ont/gml#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,10 +13,10 @@
 @prefix units: <http://www.opengis.net/def/uom/OGC/1.0/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix myST:<http://www.IntactileDESIGN.com/ontologies/2014/STOntologie#> .
-@prefix myS:<http://www.IntactileDESIGN.com/ontologies/2014/SOntologie#> .
-@prefix myT:<http://www.IntactileDESIGN.com/ontologies/2014/TOntologie#> .
-@prefix mySx:<http://www.IntactileDESIGN.com/ontologies/2014/Example#> .
+@prefix myST:<http://www.IntactileDESGN.com/ontologies/2014/STOntologie#> .
+@prefix myS:<http://www.IntactileDESGN.com/ontologies/2014/SOntologie#> .
+@prefix myT:<http://www.IntactileDESGN.com/ontologies/2014/TOntologie#> .
+@prefix mySx:<http://www.IntactileDESGN.com/ontologies/2014/Example#> .
 
 
 mySx:instant10 a time:Instant;

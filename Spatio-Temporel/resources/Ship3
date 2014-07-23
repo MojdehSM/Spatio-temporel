@@ -1,0 +1,120 @@
+@prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geoS: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix par: <http://parliament.semwebcentral.org/parliament#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix units: <http://www.opengis.net/def/uom/OGC/1.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix myST:<http://www.IntactileDESGN.com/ontologies/2014/STOntologie#> .
+@prefix myS:<http://www.IntactileDESGN.com/ontologies/2014/SOntologie#> .
+@prefix myT:<http://www.IntactileDESGN.com/ontologies/2014/TOntologie#> .
+@prefix mySx:<http://www.IntactileDESGN.com/ontologies/2014/Example#> .
+
+
+mySx:instant20 a time:Instant;
+	myT:timeValue   "2014-06-28T10:07:17"^^xsd:dateTime .
+mySx:instant21 a time:Instant;
+	myT:timeValue   "2014-06-28T10:41:30"^^xsd:dateTime .
+mySx:instant22 a time:Instant;
+	myT:timeValue   "2014-06-28T11:04:19"^^xsd:dateTime .
+mySx:instant23 a time:Instant;
+	myT:timeValue   "2014-06-28T11:30:54"^^xsd:dateTime .
+mySx:instant24 a time:Instant;
+	myT:timeValue   "2014-06-28T12:25:43"^^xsd:dateTime .
+mySx:instant25 a time:Instant;
+	myT:timeValue   "2014-06-28T13:01:32"^^xsd:dateTime .
+mySx:instant26 a time:Instant;
+	myT:timeValue   "2014-06-28T13:35:27"^^xsd:dateTime .
+mySx:instant27 a time:Instant;
+	myT:timeValue   "2014-06-28T14:10:22"^^xsd:dateTime .
+mySx:instant28 a time:Instant;
+	myT:timeValue   "2014-06-28T14:37:54"^^xsd:dateTime .
+	
+	
+mySx:MovingPoint20 a myS:MovingPoint;
+	geoS:lat "43.680895"^^xsd:float;
+	geoS:long "7.299531"^^xsd:float .
+
+mySx:MovingPoint21 a myS:MovingPoint;
+	geoS:lat "43.595422"^^xsd:float;
+	geoS:long "7.563203"^^xsd:float .
+
+mySx:MovingPoint22 a myS:MovingPoint;
+	geoS:lat "43.452033"^^xsd:float;
+	geoS:long "8.112519"^^xsd:float .
+	
+mySx:MovingPoint23 a myS:MovingPoint;
+	geoS:lat "43.360245"^^xsd:float;
+	geoS:long "8.455842"^^xsd:float .
+	
+mySx:MovingPoint24 a myS:MovingPoint;
+	geoS:lat "43.236311"^^xsd:float;
+	geoS:long "8.950227"^^xsd:float .
+
+mySx:MovingPoint25 a myS:MovingPoint;
+	geoS:lat "43.184263"^^xsd:float;
+	geoS:long "9.158967"^^xsd:float .
+	
+mySx:MovingPoint26 a myS:MovingPoint;
+	geoS:lat "43.088058"^^xsd:float;
+	geoS:long "9.535249"^^xsd:float .
+	
+mySx:MovingPoint27 a myS:MovingPoint;
+	geoS:lat "42.881108"^^xsd:float;
+	geoS:long "9.562715"^^xsd:float .
+	
+mySx:MovingPoint28 a myS:MovingPoint;
+	geoS:lat "42.68962"^^xsd:float;
+	geoS:long "9.469340"^^xsd:float .
+
+
+
+
+mySx:timeSlice20 a myST:TimeSlice;
+	myST:atTime mySx:instant20;
+	geo:hasGeometry mySx:MovingPoint20 .
+mySx:timeSlice21 a myST:TimeSlice;
+	myST:atTime mySx:instant21;
+	geo:hasGeometry mySx:MovingPoint21 .
+mySx:timeSlice22 a myST:TimeSlice;
+	myST:atTime mySx:instant22;
+	geo:hasGeometry mySx:MovingPoint22 .
+mySx:timeSlice23 a myST:TimeSlice;
+	myST:atTime mySx:instant23;
+	geo:hasGeometry mySx:MovingPoint23 .
+mySx:timeSlice24 a myST:TimeSlice;
+	myST:atTime mySx:instant24;
+	geo:hasGeometry mySx:MovingPoint24 .
+mySx:timeSlice25 a myST:TimeSlice;
+	myST:atTime mySx:instant25;
+	geo:hasGeometry mySx:MovingPoint25 .
+mySx:timeSlice26 a myST:TimeSlice;
+	myST:atTime mySx:instant26;
+	geo:hasGeometry mySx:MovingPoint26 .
+mySx:timeSlice27 a myST:TimeSlice;
+	myST:atTime mySx:instant27;
+	geo:hasGeometry mySx:MovingPoint27 .
+mySx:timeSlice28 a myST:TimeSlice;
+	myST:atTime mySx:instant28;
+	geo:hasGeometry mySx:MovingPoint28 .
+
+
+mySx:ship3 a myS:Ship;
+	rdfs:label "Gama";
+	myST:isTimeSliceOf  mySx:timeSlice20 ;
+	myST:isTimeSliceOf  mySx:timeSlice21 ;
+	myST:isTimeSliceOf  mySx:timeSlice22 ;
+	myST:isTimeSliceOf  mySx:timeSlice23 ;
+	myST:isTimeSliceOf  mySx:timeSlice24 ;
+	myST:isTimeSliceOf  mySx:timeSlice25 ;
+	myST:isTimeSliceOf  mySx:timeSlice26 ;
+	myST:isTimeSliceOf  mySx:timeSlice27 ;
+	myST:isTimeSliceOf  mySx:timeSlice28 .

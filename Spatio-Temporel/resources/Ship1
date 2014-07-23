@@ -1,6 +1,7 @@
 @prefix afn: <http://jena.hpl.hp.com/ARQ/function#> .
 @prefix fn: <http://www.w3.org/2005/xpath-functions#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geoS: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geof: <http://www.opengis.net/def/function/geosparql/> .
 @prefix gml: <http://www.opengis.net/ont/gml#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
