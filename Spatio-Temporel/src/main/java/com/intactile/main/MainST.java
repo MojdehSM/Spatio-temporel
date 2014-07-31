@@ -22,7 +22,7 @@ public class MainST {
 	public static void Interogation() {
 		Model model = CreateOntology.model;
 
-		Query query = QueryFactory.create(req3);
+		Query query = QueryFactory.create(req31);
 		QueryExecution qexec = QueryExecutionFactory.create(query, model);
 		try {
 			ResultSet results = qexec.execSelect();
@@ -61,7 +61,7 @@ public class MainST {
 			+ "PREFIX myS:<http://www.IntactileDESGN.com/ontologies/2014/SOntologie#>"
 			+ "PREFIX myT:<http://www.IntactileDESGN.com/ontologies/2014/TOntologie#>"
 			+ "PREFIX mySx:<http://www.IntactileDESGN.com/ontologies/2014/Example#> "
-			+ "" + "PREFIX spatial: <http://jena.apache.org/spatial#>";
+			+ "PREFIX spatial: <http://jena.apache.org/spatial#>";
 
 	
 	
@@ -107,8 +107,10 @@ public class MainST {
 			+ "?tposition myT:timeValue  ?when ."
 			+ "?gposition geoS:lat ?latPosition ."
 			+ "?gposition geoS:long ?longPosition ."
-			//+ "?gposition spatial:nearby(43.184263 9.158967 1 'mi')"
+			+ "?gposition spatial:withinCircle(?latPosition ?longPosition 50000 'km')"
+			//+ "?gposition spatial:withinCircle(43.184263 9.158967 50000 'km')"
 			+ "}";
+	
 	
 	//_______________________________________________Non RESULT_____________________________________
 
@@ -159,6 +161,14 @@ public class MainST {
 			+ "?port geo:hasGeometry ?geoPort ."
 			+ "?geoPort geo:asWKT ?wktPort ."
 			+ "FILTER (geof:sfWithin(?position,?wktPort))"
+			+ "}";
+	
+	static String req31 = prefix
+			+ " SELECT * WHERE"
+			+ "{"
+			+ "?ship rdf:type myS:Ship."
+			+ "?ship spatial:nearby(?latPosition ?longPosition 50000 'km')."
+			+ "?ship rdfs:label ?shipLabel."
 			+ "}";
 
 }

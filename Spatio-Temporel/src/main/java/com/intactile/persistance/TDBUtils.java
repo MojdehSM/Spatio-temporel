@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.jena.query.spatial.SpatialDatasetFactory;
 
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
@@ -27,6 +28,7 @@ public class TDBUtils implements IPersistance{
 	@Override
 	public OntModel getModel() {
 		Dataset ds = TDBFactory.createDataset(directory);
+		//Dataset ds = SpatialDatasetFactory.createLucene(ds, directory, entMap);
 		Model model = ds.getDefaultModel();
 		OntModel ontModel = ModelFactory.createOntologyModel(
 				OntModelSpec.OWL_MEM, model);
